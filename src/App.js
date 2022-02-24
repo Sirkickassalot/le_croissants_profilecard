@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import ProfileCard from './components/ProfileCard'
+import profiles from './fakeData'
 
-function App() {
+function App () {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <h2 style={{color:'whitesmoke', display: 'flex', justifyContent: 'center'}}>The Croissants</h2>
+      {profiles.map(profile => (
+        <ProfileCard 
+          image={profile.image} 
+          title={profile.title}
+          name={profile.name}
+          description={profile.description}
+        />
+      ))}
+
+    </>
+  )
+
 }
 
-export default App;
+export default App
